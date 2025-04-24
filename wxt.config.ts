@@ -5,4 +5,14 @@ export default defineConfig({
   srcDir: 'src',
   manifestVersion: 3,
   modules: ['@wxt-dev/module-svelte'],
+  vite() {
+    return {
+      server: {
+        cors: true,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+        }
+      }
+    }
+  },
 });
