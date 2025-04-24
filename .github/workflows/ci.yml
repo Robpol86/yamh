@@ -26,3 +26,7 @@ jobs:
 
       - name: Lint
         run: make lint
+
+      # TODO build
+
+      # TODO artifacts for different browsers
