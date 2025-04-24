@@ -28,20 +28,31 @@ test: _HELP = Run unit tests (SPECIFIC_TEST env var available)
 test:
 	@echo NotImplemented: $@
 
-.PHONY: all
-all: _HELP = Run linters, unit tests, integration tests, and builds
-all: test lint
+## Development
+
+.PHONY: dev-chrome
+dev-chrome: _HELP = Open a Chrome instance with the extension installed
+dev-chrome:
+	pnpm run dev
+
+.PHONY: dev-firefox
+dev-firefox: _HELP = Open a Firefox instance with the extension installed
+dev-firefox:
+	pnpm run dev:firefox --mv2
 
 ## Misc
 
+.PHONY: format
 format: _HELP = Apply format/lint fixes
 format:
 	@echo NotImplemented: $@
 
+.PHONY: clean
 clean: _HELP = Remove temporary files
 clean:
 	@echo NotImplemented: $@
 
+.PHONY: distclean
 distclean: _HELP = Remove temporary files including node_modules
 distclean: clean
 	rm -rf node_modules/
@@ -90,6 +101,7 @@ FILENAME SUBSEP FNR SUBSEP 0 SUBSEP "target_name" in data {
 }
 endef
 
+.PHONY: HELP
 help: make_workaround = $(MAKE)
 help: export program = $(MAKEFILE_HELP_AWK)
 help: _HELP = Print help menu
