@@ -21,7 +21,7 @@ deps:
 .PHONY: lint
 lint: _HELP = Run linters
 lint:
-	@echo NotImplemented: $@
+	pnpm run lint
 
 .PHONY: test
 test: _HELP = Run unit tests (SPECIFIC_TEST env var available)
@@ -45,17 +45,17 @@ dev-firefox:
 .PHONY: format
 format: _HELP = Apply format/lint fixes
 format:
-	@echo NotImplemented: $@
+	pnpm run lint:fix
 
 .PHONY: clean
 clean: _HELP = Remove temporary files
 clean:
-	@echo NotImplemented: $@
+	rm -rfv .output/
 
 .PHONY: distclean
 distclean: _HELP = Remove temporary files including node_modules
 distclean: clean
-	rm -rf node_modules/
+	rm -rf node_modules/ .wxt/
 
 define MAKEFILE_HELP_AWK
 BEGIN {
@@ -101,7 +101,6 @@ FILENAME SUBSEP FNR SUBSEP 0 SUBSEP "target_name" in data {
 }
 endef
 
-.PHONY: HELP
 help: make_workaround = $(MAKE)
 help: export program = $(MAKEFILE_HELP_AWK)
 help: _HELP = Print help menu
