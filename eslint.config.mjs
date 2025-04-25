@@ -25,7 +25,6 @@ export default tseslint.config(
                 projectService: {
                     allowDefaultProject: ["eslint.config.mjs"],
                 },
-                tsconfigRootDir: import.meta.dirname,
             },
         },
         rules: {
