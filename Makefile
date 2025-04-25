@@ -102,6 +102,7 @@ FILENAME SUBSEP FNR SUBSEP 0 SUBSEP "target_name" in data {
 }
 endef
 
+.PHONY: help
 help: make_workaround = $(MAKE)
 help: export program = $(MAKEFILE_HELP_AWK)
 help: _HELP = Print help menu
