@@ -9,7 +9,7 @@ pnpm-lock.yaml:
 .PHONY: relock
 relock: _HELP = Delete and recreate the lock file
 relock:
-	rm -rf node_modules/ pnpm-lock.yaml && $(MAKE) pnpm-lock.yaml
+	rm -f pnpm-lock.yaml && $(MAKE) pnpm-lock.yaml
 
 .PHONY: deps
 deps: _HELP = Install project dependencies
