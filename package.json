@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "linx": "eslint --no-error-on-unmatched-pattern '*.js' '*.?js' 'src/**/*.js' 'src/**/*.?js' 'public/**/*.js' 'public/**/*.?js' 'tests/**/*.js'",
-    "lint": "eslint --no-error-on-unmatched-pattern . --ext js --ext cjs --ext mjs",
+    "lint": "eslint --no-error-on-unmatched-pattern . --ext js --ext cjs --ext mjs --ext ts",
     "lint:fix": "pnpm run lint --fix",
     "dev": "wxt",
     "dev:firefox": "wxt -b firefox",
