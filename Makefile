@@ -22,6 +22,12 @@ deps:
 lint: _HELP = Run linters
 lint:
 	pnpm run lint
+	pnpm run check
+
+.PHONY: format
+format: _HELP = Apply format/lint fixes
+format:
+	pnpm run lint:fix
 
 .PHONY: test
 test: _HELP = Run unit tests (SPECIFIC_TEST env var available)
@@ -41,11 +47,6 @@ dev-firefox:
 	pnpm run dev:firefox --mv2
 
 ## Misc
-
-.PHONY: format
-format: _HELP = Apply format/lint fixes
-format:
-	pnpm run lint:fix
 
 .PHONY: clean
 clean: _HELP = Remove temporary files

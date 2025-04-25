@@ -1,9 +1,11 @@
+import autoImports from "./.wxt/eslint-auto-imports.mjs";
 import globals from "globals";
 import pluginJs from "@eslint/js";
 import pluginPrettier from "eslint-plugin-prettier/recommended";
 
 /** @type {import("eslint").Linter.Config[]} */
 export default [
+    autoImports,
     {
         languageOptions: {
             globals: {
