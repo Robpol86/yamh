@@ -29,6 +29,7 @@
     "svelte-check": "^4.1.5",
     "tslib": "^2.8.1",
     "typescript": "^5.8.3",
+    "typescript-eslint": "^8.31.0",
     "wxt": "^0.20.4"
   }
 }
