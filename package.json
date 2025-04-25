@@ -5,6 +5,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "lint": "eslint --no-error-on-unmatched-pattern . --ext js --ext cjs --ext mjs --ext ts",
+    "lint:fix": "pnpm run lint --fix",
     "dev": "wxt",
     "dev:firefox": "wxt -b firefox",
     "build": "wxt build",
@@ -15,12 +17,18 @@
     "postinstall": "wxt prepare"
   },
   "devDependencies": {
+    "@eslint/js": "^9.25.1",
     "@tsconfig/svelte": "^5.0.4",
     "@wxt-dev/module-svelte": "^2.0.3",
+    "eslint": "^9.25.1",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-prettier": "^5.2.6",
+    "globals": "^16.0.0",
     "svelte": "^5.25.9",
     "svelte-check": "^4.1.5",
     "tslib": "^2.8.1",
     "typescript": "^5.8.3",
+    "typescript-eslint": "^8.31.0",
     "wxt": "^0.20.4"
   }
 }
