@@ -1,8 +1,17 @@
 {
-  "name": "wxt-svelte-starter",
-  "description": "manifest.json description",
-  "private": true,
-  "version": "0.0.0",
+  "name": "yamh",
+  "version": "2.0.0",
+  "description": "Yet Another Multiple Highlight Chrome extension",
+  "license": "BSD-2-Clause",
+  "author": "Robpol86",
+  "homepage": "https://github.com/Robpol86/yamh",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Robpol86/yamh.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Robpol86/yamh/issues"
+  },
   "type": "module",
   "scripts": {
     "lint": "eslint --no-error-on-unmatched-pattern . --ext js --ext cjs --ext mjs --ext ts",
