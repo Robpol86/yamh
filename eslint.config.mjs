@@ -1,10 +1,12 @@
 import autoImports from "./.wxt/eslint-auto-imports.mjs";
+import { globalIgnores } from "eslint/config";
 import globals from "globals";
 import pluginJs from "@eslint/js";
 import pluginPrettier from "eslint-plugin-prettier/recommended";
 
 /** @type {import("eslint").Linter.Config[]} */
 export default [
+    globalIgnores([".output/", ".wxt/"]),
     autoImports,
     {
         languageOptions: {
