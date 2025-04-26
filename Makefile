@@ -30,7 +30,7 @@ format:
 	pnpm run lint:fix
 
 .PHONY: test
-test: _HELP = Run unit tests (SPECIFIC_TEST env var available)
+test: _HELP = Run unit tests
 test:
 	@echo NotImplemented: $@
 
@@ -47,6 +47,10 @@ dev-firefox:
 	pnpm run dev:firefox --mv2
 
 ## Misc
+
+.PHONY: all
+all: _HELP = Run linters and unit tests
+all: test lint
 
 .PHONY: clean
 clean: _HELP = Remove temporary files
