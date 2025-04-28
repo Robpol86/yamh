@@ -25,6 +25,9 @@
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "postinstall": "wxt prepare"
   },
+  "dependencies": {
+    "@wxt-dev/i18n": "^0.2.3"
+  },
   "devDependencies": {
     "@eslint/js": "^9.25.1",
     "@tsconfig/svelte": "^5.0.4",

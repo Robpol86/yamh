@@ -4,8 +4,9 @@ import { defineConfig } from "wxt";
 export default defineConfig({
     srcDir: "src",
     manifest: {
+        default_locale: "en",
         permissions: ["storage"],
     },
     manifestVersion: 3,
-    modules: ["@wxt-dev/module-svelte"],
+    modules: ["@wxt-dev/i18n/module", "@wxt-dev/module-svelte"],
 });
