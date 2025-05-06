@@ -14,7 +14,7 @@
   },
   "type": "module",
   "scripts": {
-    "lint": "eslint --no-error-on-unmatched-pattern . --ext js --ext cjs --ext mjs --ext ts",
+    "lint": "eslint --no-error-on-unmatched-pattern . --ext js --ext cjs --ext mjs --ext ts --ext svelte",
     "lint:fix": "pnpm run lint --fix",
     "dev": "wxt",
     "dev:firefox": "wxt -b firefox",
