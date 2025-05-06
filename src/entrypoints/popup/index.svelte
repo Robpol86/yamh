@@ -5,11 +5,9 @@
 <style>
 </style>
 
-<main class="container-fluid">
-  <form>
-    <fieldset>
-      <input type="checkbox" role="switch" id="enableChbx" disabled>
-      <label for="enableChbx" id="enableChbxLabel">{i18n.t("websiteNotSupported")}</label>
-    </fieldset>
-  </form>
-</main>
+<form>
+  <fieldset>
+    <input type="checkbox" role="switch" id="enableChbx" disabled>
+    <label for="enableChbx" id="enableChbxLabel">{i18n.t("websiteNotSupported")}</label>
+  </fieldset>
+</form>
