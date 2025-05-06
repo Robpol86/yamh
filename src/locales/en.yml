@@ -1,1 +1,3 @@
+enableHighlightingOn: "Enable highlighting on $1"
+initializing: "Initializing…"
 websiteNotSupported: "Website not supported"
