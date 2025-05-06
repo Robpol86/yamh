@@ -1,6 +1,6 @@
 import "../../lib/pico.min.css";
-import "./app.css";
-import App from "./App.svelte";
+import "./index.css";
+import App from "./index.svelte";
 import { mount } from "svelte";
 
 const app = mount(App, {
