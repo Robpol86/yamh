@@ -5,7 +5,7 @@ export default defineConfig({
     srcDir: "src",
     manifest: {
         default_locale: "en",
-        permissions: ["storage", "tabs"],
+        permissions: ["storage"],
     },
     manifestVersion: 3,
     modules: ["@wxt-dev/i18n/module", "@wxt-dev/module-svelte"],

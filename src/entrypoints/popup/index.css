@@ -2,3 +2,8 @@ html {
   min-height: 5em;
   min-width: 15em;
 }
+
+body {
+  white-space: nowrap;
+  width: auto;
+}
