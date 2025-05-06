@@ -3,6 +3,7 @@ import eslint from "@eslint/js";
 import globals from "globals";
 import pluginJs from "@eslint/js";
 import pluginPrettier from "eslint-plugin-prettier/recommended";
+import svelte from "eslint-plugin-svelte";
 import tseslint from "typescript-eslint";
 
 /** @type {import("eslint").Linter.Config[]} */
@@ -10,6 +11,8 @@ export default tseslint.config(
     eslint.configs.recommended,
     tseslint.configs.strictTypeChecked,
     tseslint.configs.stylisticTypeChecked,
+    ...svelte.configs.recommended,
+    ...svelte.configs.prettier,
     autoImports,
     {
         ignores: [".output/", ".wxt/"],
@@ -27,6 +30,18 @@ export default tseslint.config(
                 },
             },
         },
+    },
+    {
+        files: ["**/*.svelte", "**/*.svelte.ts"],
+        languageOptions: {
+            parserOptions: {
+                projectService: true,
+                extraFileExtensions: [".svelte", ".svelte.ts"],
+                parser: tseslint.parser,
+            },
+        },
+    },
+    {
         rules: {
             "no-unused-vars": [
                 "error",
