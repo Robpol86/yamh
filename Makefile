@@ -36,15 +36,25 @@ test:
 
 ## Development
 
-.PHONY: dev-chrome
-dev-chrome: _HELP = Open a Chrome instance with the extension installed
-dev-chrome:
+.PHONY: dev dev-chrome
+dev dev-chrome: _HELP = Open a Chrome instance with the extension installed
+dev dev-chrome:
 	pnpm run dev
 
 .PHONY: dev-firefox
 dev-firefox: _HELP = Open a Firefox instance with the extension installed
 dev-firefox:
 	pnpm run dev:firefox --mv2
+
+## Build
+
+.PHONY: build
+build: _HELP = Build packages
+build:
+	pnpm build
+	pnpm build:firefox
+	pnpm zip
+	pnpm zip:firefox
 
 ## Misc
 
@@ -55,12 +65,12 @@ all: test lint
 .PHONY: clean
 clean: _HELP = Remove temporary files
 clean:
-	rm -rfv .output/
+	rm -rfv .output/ .wxt/
 
 .PHONY: distclean
 distclean: _HELP = Remove temporary files including node_modules
 distclean: clean
-	rm -rf node_modules/ .wxt/
+	rm -rf node_modules/
 
 define MAKEFILE_HELP_AWK
 BEGIN {
