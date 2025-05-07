@@ -1,5 +1,6 @@
 <script lang="ts">
     import Counter from "../../lib/Counter.svelte";
+    import { i18n } from "#i18n";
     import svelteLogo from "../../assets/svelte.svg";
 </script>
 
@@ -18,7 +19,7 @@
         <Counter />
     </div>
 
-    <p class="read-the-docs">Click on the WXT and Svelte logos to learn more</p>
+    <p class="read-the-docs">{i18n.t("click2learnMore")}</p>
 </main>
 
 <style>
