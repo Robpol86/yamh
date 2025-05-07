@@ -8,7 +8,7 @@
     let websiteSupported = $state(false);
     let website = $state("");
     let disabled = $derived(!(initialized && websiteSupported));
-    let checked = $state(false); // TODO
+    let checked = $state(false);
 
     onMount(async () => {
         // Enable on supported websites
