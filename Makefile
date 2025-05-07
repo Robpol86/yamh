@@ -49,7 +49,7 @@ dev-firefox:
 ## Build
 
 .PHONY: build
-build: _HELP = Build packages
+build: _HELP = Build all packages
 build:
 	pnpm build
 	pnpm build:firefox
