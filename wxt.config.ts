@@ -4,6 +4,7 @@ import { defineConfig } from "wxt";
 export default defineConfig({
     srcDir: "src",
     manifest: {
+        browser_specific_settings: { gecko: { id: "yamh@robpol86.com" } },
         default_locale: "en",
         permissions: ["storage"],
     },
