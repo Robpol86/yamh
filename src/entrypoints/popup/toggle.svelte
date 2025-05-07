@@ -7,14 +7,17 @@
     let websiteSupported = $state(false);
     let website = $state("");
     let disabled = $derived(!(initialized && websiteSupported));
+    let checked = $state(false); // TODO
 
     onMount(async () => {
         // Enable on supported websites
         const [tab] = await browser.tabs.query({ active: true, currentWindow: true });
-        if (isWebsiteSupported(tab)) {
-            websiteSupported = true;
-            website = getHostname(tab);
+        if (!isWebsiteSupported(tab)) {
+            initialized = true;
+            return;
         }
+        websiteSupported = true;
+        website = getHostname(tab);
 
         // Hook up state to browser storage.
         // TODO
@@ -24,7 +27,7 @@
 </script>
 
 <label>
-    <input type="checkbox" role="switch" {disabled} />
+    <input type="checkbox" role="switch" {disabled} bind:checked />
     {#if initialized && websiteSupported}
         {i18n.t("enableHighlightingOn", [website])}
     {:else if initialized}
