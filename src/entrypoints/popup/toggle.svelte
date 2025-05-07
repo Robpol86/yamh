@@ -22,6 +22,8 @@
 
         // Hook up state to browser storage.
         enabledWebsites.watch((newValue) => (checked = newValue.includes(website)));
+        const websiteList = await enabledWebsites.getValue();
+        checked = websiteList.includes(website);
 
         initialized = true;
     });
