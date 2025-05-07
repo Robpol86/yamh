@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { getHostname } from "@/lib/lib";
+    import { getHostname, isWebsiteSupported } from "./lib";
     import { i18n } from "#i18n";
     import { onMount } from "svelte";
 
@@ -11,12 +11,7 @@
     onMount(async () => {
         // Enable on supported websites
         const [tab] = await browser.tabs.query({ active: true, currentWindow: true });
-        if (!tab.url) {
-            console.error("Missing tab url", tab);
-            return;
-        }
-        const url = new URL(tab.url);
-        if (url.protocol === "https:" || url.protocol === "http:") {
+        if (isWebsiteSupported(tab)) {
             websiteSupported = true;
             website = getHostname(tab);
         }
