@@ -1,5 +1,6 @@
 <script lang="ts">
     import { getHostname, isWebsiteSupported } from "./lib";
+    import { enabledWebsites } from "@/lib/storage";
     import { i18n } from "#i18n";
     import { onMount } from "svelte";
 
@@ -20,14 +21,25 @@
         website = getHostname(tab);
 
         // Hook up state to browser storage.
-        // TODO
+        enabledWebsites.watch((newValue) => (checked = newValue.includes(website)));
 
         initialized = true;
     });
+
+    async function onchange(event: Event) {
+        if (!website) return;
+        const checkbox = event.target as HTMLInputElement;
+        let websiteList = await enabledWebsites.getValue();
+
+        if (checkbox.checked) websiteList.push(website);
+        else websiteList = websiteList.filter((item) => item !== website);
+
+        await enabledWebsites.setValue(websiteList);
+    }
 </script>
 
 <label>
-    <input type="checkbox" role="switch" {disabled} bind:checked />
+    <input type="checkbox" role="switch" {disabled} bind:checked {onchange} />
     {#if initialized && websiteSupported}
         {i18n.t("enableHighlightingOn", [website])}
     {:else if initialized}
