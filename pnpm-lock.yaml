@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       '@wxt-dev/i18n':
-        specifier: ^0.2.3
+        specifier: ^0.2.4
         version: 0.2.4(wxt@0.20.6(@types/node@22.15.12)(jiti@2.4.2)(rollup@4.40.2))
     devDependencies:
       '@eslint/js':
