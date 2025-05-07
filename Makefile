@@ -59,8 +59,8 @@ build:
 ## Misc
 
 .PHONY: all
-all: _HELP = Run linters and unit tests
-all: test lint
+all: _HELP = Run linters and unit tests and builds
+all: test lint build
 
 .PHONY: clean
 clean: _HELP = Remove temporary files
