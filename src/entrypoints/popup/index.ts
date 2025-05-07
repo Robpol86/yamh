@@ -1,3 +1,4 @@
+import "../../lib/pico.min.css";
 import "./index.css";
 import App from "./index.svelte";
 import { mount } from "svelte";
