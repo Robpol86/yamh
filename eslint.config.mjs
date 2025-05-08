@@ -15,7 +15,7 @@ export default tseslint.config(
     ...svelte.configs.prettier,
     autoImports,
     {
-        ignores: [".output/", ".wxt/"],
+        ignores: [".output/", ".wxt/", "coverage/"],
     },
     {
         languageOptions: {

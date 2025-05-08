@@ -13,12 +13,12 @@
     onMount(async () => {
         // Enable on supported websites
         const [tab] = await browser.tabs.query({ active: true, currentWindow: true });
-        if (!isWebsiteSupported(tab)) {
+        if (!tab.url || !isWebsiteSupported(tab.url)) {
             initialized = true;
             return;
         }
         websiteSupported = true;
-        website = getHostname(tab);
+        website = getHostname(tab.url);
 
         // Hook up state to browser storage.
         enabledWebsites.watch((newValue) => (checked = newValue.includes(website)));

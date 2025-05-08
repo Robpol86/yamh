@@ -32,7 +32,7 @@ format:
 .PHONY: test
 test: _HELP = Run unit tests
 test:
-	@echo NotImplemented: $@
+	pnpm run test
 
 ## Development
 
@@ -65,7 +65,7 @@ all: test lint build
 .PHONY: clean
 clean: _HELP = Remove temporary files
 clean:
-	rm -rfv .output/ .wxt/
+	rm -rfv .output/ .wxt/ coverage/
 
 .PHONY: distclean
 distclean: _HELP = Remove temporary files including node_modules
