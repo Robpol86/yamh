@@ -34,6 +34,11 @@ test: _HELP = Run unit tests
 test:
 	pnpm run test
 
+.PHONY: e2e
+e2e: _HELP = Run end to end tests
+e2e:
+	pnpm run e2e
+
 ## Development
 
 .PHONY: dev dev-chrome
