@@ -3,27 +3,24 @@
  */
 
 /**
- * Extracts the hostname from the tab url.
+ * Extracts the hostname from the url.
  *
- * @param tab - Tab object returned by chrome.tabs.query.
- * @returns - The hostname of the first tab's URL.
+ * @param url - URL to parse.
+ * @returns - The hostname portion of the URL.
  */
-export function getHostname(tab: Browser.tabs.Tab): string {
-    if (!tab.url) throw new Error("Tab has no URL");
-    const url = new URL(tab.url);
-    return url.hostname;
+export function getHostname(url: string): string {
+    return new URL(url).hostname;
 }
 
 /**
  * Checks if the website is supported by the extension.
  *
- * @param tab - Browser Tab object.
+ * @param url - URL to check.
  * @returns - True if the website is supported by the extension.
  */
-export function isWebsiteSupported(tab: Browser.tabs.Tab): boolean {
-    if (!tab.url) throw new Error("Tab has no URL");
-    const url = new URL(tab.url);
-    if (url.protocol === "https:") return true;
-    if (url.protocol === "http:") return true;
+export function isWebsiteSupported(url: string): boolean {
+    const protocol = new URL(url).protocol;
+    if (protocol === "https:") return true;
+    if (protocol === "http:") return true;
     return false;
 }
